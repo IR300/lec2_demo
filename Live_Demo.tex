@@ -1,0 +1,510 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Untitled},
+  pdfauthor={cc},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\title{Untitled}
+\author{cc}
+\date{2020/9/6}
+
+\begin{document}
+\maketitle
+
+When Trump wishes the Olympic team good luck, he's tweeting from his
+iPhone. When he's insulting a rival, he's usually tweeting from an
+Android. Is this an artifact showing which tweets are Trump's own and
+which are by some handler?
+
+Others have
+\href{http://www.cnet.com/news/trumps-tweets-android-for-nasty-iphone-for-nice/}{explored
+Trump's timeline} and noticed this tends to hold up- and Trump himself
+\href{http://www.theverge.com/2015/10/5/9453935/donald-trump-twitter-strategy}{does
+indeed tweet from a Samsung Galaxy}. But how could we examine it
+quantitatively? I've been writing about text mining and
+\href{http://varianceexplained.org/r/yelp-sentiment/}{sentiment
+analysis} recently, particularly during my development of the
+\href{http://github.com/juliasilge/tidytext}{tidytext R package} with
+Julia Silge, and this is a great opportunity to apply it again.
+
+My analysis, shown below, concludes that \textbf{the Android and iPhone
+tweets are clearly from different people}, posting during different
+times of day and using hashtags, links, and retweets in distinct ways.
+What's more, we can see that \textbf{the Android tweets are angrier and
+more negative}, while the iPhone tweets tend to be benign announcements
+and pictures. Overall I'd agree with
+{[}@tvaziri{]}(\url{https://twitter.com/tvaziri})'s analysis: this lets
+us tell the difference between the campaign's tweets (iPhone) and
+Trump's own (Android).
+
+\hypertarget{the-dataset}{%
+\subsubsection{The dataset}\label{the-dataset}}
+
+First we'll retrieve the content of Donald Trump's timeline using the
+\texttt{userTimeline} function in the
+\href{https://cran.r-project.org/web/packages/twitteR}{twitteR}
+package:\footnote{To keep the post concise I don't show all of the code,
+  especially code that generates figures. But you can find the full code
+  \href{https://github.com/dgrtwo/dgrtwo.github.com/blob/master/_R/2016-08-09-trump-tweets.Rmd}{here}.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(dplyr)}
+\KeywordTok{library}\NormalTok{(purrr)}
+\KeywordTok{library}\NormalTok{(twitteR)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# if you want to follow along without setting up Twitter authentication,}
+\CommentTok{# just use my dataset:}
+\KeywordTok{load}\NormalTok{(}\KeywordTok{url}\NormalTok{(}\StringTok{"http://varianceexplained.org/files/trump_tweets_df.rda"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+We clean this data a bit, extracting the source application. (We're
+looking only at the iPhone and Android tweets- a much smaller number are
+from the web client or iPad).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(tidyr)}
+
+\NormalTok{tweets <-}\StringTok{ }\NormalTok{trump_tweets_df }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(id, statusSource, text, created) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{extract}\NormalTok{(statusSource, }\StringTok{"source"}\NormalTok{, }\StringTok{"Twitter for (.*?)<"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(source }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"iPhone"}\NormalTok{, }\StringTok{"Android"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+Overall, this includes 628 tweets from iPhone, and 762 tweets from
+Android.
+
+One consideration is what time of day the tweets occur, which we'd
+expect to be a ``signature'' of their user. Here we can certainly spot a
+difference:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(lubridate)}
+\KeywordTok{library}\NormalTok{(scales)}
+
+\NormalTok{tweets }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{count}\NormalTok{(source, }\DataTypeTok{hour =} \KeywordTok{hour}\NormalTok{(}\KeywordTok{with_tz}\NormalTok{(created, }\StringTok{"EST"}\NormalTok{))) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{percent =}\NormalTok{ n }\OperatorTok{/}\StringTok{ }\KeywordTok{sum}\NormalTok{(n)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(hour, percent, }\DataTypeTok{color =}\NormalTok{ source)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_line}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{scale_y_continuous}\NormalTok{(}\DataTypeTok{labels =} \KeywordTok{percent_format}\NormalTok{()) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x =} \StringTok{"Hour of day (EST)"}\NormalTok{,}
+       \DataTypeTok{y =} \StringTok{"% of tweets"}\NormalTok{,}
+       \DataTypeTok{color =} \StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Live_Demo_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+Trump on the Android does a lot more tweeting in the morning, while the
+campaign posts from the iPhone more in the afternoon and early evening.
+
+Another place we can spot a difference is in Trump's anachronistic
+behavior of ``manually retweeting'' people by copy-pasting their tweets,
+then surrounding them with quotation marks:
+
+Almost all of these quoted tweets are posted from the Android:
+
+\includegraphics{Live_Demo_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+In the remaining by-word analyses in this text, I'll filter these quoted
+tweets out (since they contain text from followers that may not be
+representative of Trump's own tweets).
+
+Somewhere else we can see a difference involves sharing links or
+pictures in tweets.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tweet_picture_counts <-}\StringTok{ }\NormalTok{tweets }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(}\OperatorTok{!}\KeywordTok{str_detect}\NormalTok{(text, }\StringTok{'^"'}\NormalTok{)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{count}\NormalTok{(source,}
+        \DataTypeTok{picture =} \KeywordTok{ifelse}\NormalTok{(}\KeywordTok{str_detect}\NormalTok{(text, }\StringTok{"t.co"}\NormalTok{),}
+                         \StringTok{"Picture/link"}\NormalTok{, }\StringTok{"No picture/link"}\NormalTok{))}
+
+\KeywordTok{ggplot}\NormalTok{(tweet_picture_counts, }\KeywordTok{aes}\NormalTok{(source, n, }\DataTypeTok{fill =}\NormalTok{ picture)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_bar}\NormalTok{(}\DataTypeTok{stat =} \StringTok{"identity"}\NormalTok{, }\DataTypeTok{position =} \StringTok{"dodge"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x =} \StringTok{""}\NormalTok{, }\DataTypeTok{y =} \StringTok{"Number of tweets"}\NormalTok{, }\DataTypeTok{fill =} \StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Live_Demo_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+It turns out tweets from the iPhone were \textbf{38 times as likely to
+contain either a picture or a link.} This also makes sense with our
+narrative: the iPhone (presumably run by the campaign) tends to write
+``announcement'' tweets about events, like this:
+
+\hypertarget{comparison-of-words}{%
+\subsubsection{Comparison of words}\label{comparison-of-words}}
+
+Now that we're sure there's a difference between these two accounts,
+what can we say about the difference in the \emph{content}? We'll use
+the \href{https://cran.r-project.org/web/packages/tidytext}{tidytext}
+package that \href{http://juliasilge.com/}{Julia Silge} and I developed.
+
+We start by dividing into individual words using the
+\texttt{unnest\_tokens} function (see
+\href{https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html}{this
+vignette} for more), and removing some common ``stopwords''\footnote{We
+  had to use a custom regular expression for Twitter, since typical
+  tokenizers would split the \# off of hashtags and @ off of usernames.
+  We also removed links and ampersands (\texttt{\&amp;}) from the text.}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(tidytext)}
+
+\NormalTok{reg <-}\StringTok{ "([^A-Za-z}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{d#@']|'(?![A-Za-z}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{d#@]))"}
+\NormalTok{tweet_words <-}\StringTok{ }\NormalTok{tweets }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(}\OperatorTok{!}\KeywordTok{str_detect}\NormalTok{(text, }\StringTok{'^"'}\NormalTok{)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{text =} \KeywordTok{str_replace_all}\NormalTok{(text, }\StringTok{"https://t.co/[A-Za-z}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{d]+|&amp;"}\NormalTok{, }\StringTok{""}\NormalTok{)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{unnest_tokens}\NormalTok{(word, text, }\DataTypeTok{token =} \StringTok{"regex"}\NormalTok{, }\DataTypeTok{pattern =}\NormalTok{ reg) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(}\OperatorTok{!}\NormalTok{word }\OperatorTok{%in%}\StringTok{ }\NormalTok{stop_words}\OperatorTok{$}\NormalTok{word,}
+         \KeywordTok{str_detect}\NormalTok{(word, }\StringTok{"[a-z]"}\NormalTok{))}
+
+\NormalTok{tweet_words}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 8,753 x 4
+##    id                 source created             word                  
+##    <chr>              <chr>  <dttm>              <chr>                 
+##  1 676494179216805888 iPhone 2015-12-14 20:09:15 record                
+##  2 676494179216805888 iPhone 2015-12-14 20:09:15 health                
+##  3 676494179216805888 iPhone 2015-12-14 20:09:15 #makeamericagreatagain
+##  4 676494179216805888 iPhone 2015-12-14 20:09:15 #trump2016            
+##  5 676509769562251264 iPhone 2015-12-14 21:11:12 accolade              
+##  6 676509769562251264 iPhone 2015-12-14 21:11:12 @trumpgolf            
+##  7 676509769562251264 iPhone 2015-12-14 21:11:12 highly                
+##  8 676509769562251264 iPhone 2015-12-14 21:11:12 respected             
+##  9 676509769562251264 iPhone 2015-12-14 21:11:12 golf                  
+## 10 676509769562251264 iPhone 2015-12-14 21:11:12 odyssey               
+## # ... with 8,743 more rows
+\end{verbatim}
+
+What were the most common words in Trump's tweets overall?
+
+\includegraphics{Live_Demo_files/figure-latex/tweet_words_plot-1.pdf}
+
+These should look familiar for anyone who has seen the feed. Now let's
+consider which words are most common from the Android relative to the
+iPhone, and vice versa. We'll use the simple measure of log odds ratio,
+calculated for each word as:\footnote{The ``plus ones,'' called
+  \href{https://en.wikipedia.org/wiki/Additive_smoothing}{Laplace
+  smoothing} are to avoid dividing by zero and to put
+  \href{http://varianceexplained.org/r/empirical_bayes_baseball/}{more
+  trust in common words}.}
+
+\[\log_2(\frac{\frac{\mbox{# in Android} + 1}{\mbox{Total Android} + 1}}
+  {\frac{\mbox{# in iPhone} + 1}{\mbox{Total iPhone} + 1}})\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{android_iphone_ratios <-}\StringTok{ }\NormalTok{tweet_words }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{count}\NormalTok{(word, source) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(}\KeywordTok{sum}\NormalTok{(n) }\OperatorTok{>=}\StringTok{ }\DecValTok{5}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{spread}\NormalTok{(source, n, }\DataTypeTok{fill =} \DecValTok{0}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{ungroup}\NormalTok{() }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate_each}\NormalTok{(}\KeywordTok{funs}\NormalTok{((. }\OperatorTok{+}\StringTok{ }\DecValTok{1}\NormalTok{) }\OperatorTok{/}\StringTok{ }\KeywordTok{sum}\NormalTok{(. }\OperatorTok{+}\StringTok{ }\DecValTok{1}\NormalTok{)), }\OperatorTok{-}\NormalTok{word) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{logratio =} \KeywordTok{log2}\NormalTok{(Android }\OperatorTok{/}\StringTok{ }\NormalTok{iPhone)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{arrange}\NormalTok{(}\KeywordTok{desc}\NormalTok{(logratio))}
+\end{Highlighting}
+\end{Shaded}
+
+Which are the words most likely to be from Android and most likely from
+iPhone?
+
+\includegraphics{Live_Demo_files/figure-latex/android_iphone_ratios_plot-1.pdf}
+
+A few observations:
+
+\begin{itemize}
+\item
+  \textbf{Most hashtags come from the iPhone}. Indeed, almost no tweets
+  from Trump's Android contained hashtags, with some rare exceptions
+  like
+  \href{https://twitter.com/realDonaldTrump/status/753960134422900736}{this
+  one}. (This is true only because we filtered out the quoted
+  ``retweets'', as Trump does sometimes quote tweets
+  \href{https://twitter.com/realDonaldTrump/status/731805331425218560}{like
+  this} that contain hashtags).
+\item
+  \textbf{Words like ``join'' and ``tomorrow'', and times like ``7pm'',
+  also came only from the iPhone}. The iPhone is clearly responsible for
+  event announcements like
+  \href{https://twitter.com/realDonaldTrump/status/743522630230228993}{this
+  one} (``Join me in Houston, Texas tomorrow night at 7pm!'')
+\item
+  \textbf{A lot of ``emotionally charged'' words, like ``badly'',
+  ``crazy'', ``weak'', and ``dumb'', were overwhelmingly more common on
+  Android.} This supports the original hypothesis that this is the
+  ``angrier'' or more hyperbolic account.
+\end{itemize}
+
+\hypertarget{sentiment-analysis-trumps-tweets-are-much-more-negative-than-his-campaigns}{%
+\subsubsection{Sentiment analysis: Trump's tweets are much more negative
+than his
+campaign's}\label{sentiment-analysis-trumps-tweets-are-much-more-negative-than-his-campaigns}}
+
+Since we've observed a difference in sentiment between the Android and
+iPhone tweets, let's try quantifying it. We'll work with the
+\href{http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm}{NRC
+Word-Emotion Association} lexicon, available from the tidytext package,
+which associates words with 10 sentiments: \textbf{positive},
+\textbf{negative}, \textbf{anger}, \textbf{anticipation},
+\textbf{disgust}, \textbf{fear}, \textbf{joy}, \textbf{sadness},
+\textbf{surprise}, and \textbf{trust}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(tidytext)}
+\KeywordTok{library}\NormalTok{(textdata)}
+\NormalTok{nrc <-}\StringTok{ }\KeywordTok{get_sentiments}\NormalTok{(}\StringTok{"nrc"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+To measure the sentiment of the Android and iPhone tweets, we can count
+the number of words in each category:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sources <-}\StringTok{ }\NormalTok{tweet_words }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(source) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{total_words =} \KeywordTok{n}\NormalTok{()) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{ungroup}\NormalTok{() }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{distinct}\NormalTok{(id, source, total_words)}
+
+\NormalTok{by_source_sentiment <-}\StringTok{ }\NormalTok{tweet_words }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{inner_join}\NormalTok{(nrc, }\DataTypeTok{by =} \StringTok{"word"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{count}\NormalTok{(sentiment, id) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{ungroup}\NormalTok{() }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{complete}\NormalTok{(sentiment, id, }\DataTypeTok{fill =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{n =} \DecValTok{0}\NormalTok{)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{inner_join}\NormalTok{(sources) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(source, sentiment, total_words) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{words =} \KeywordTok{sum}\NormalTok{(n)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{ungroup}\NormalTok{()}
+
+\KeywordTok{head}\NormalTok{(by_source_sentiment)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 4
+##   source  sentiment    total_words words
+##   <chr>   <chr>              <int> <dbl>
+## 1 Android anger               4901   321
+## 2 Android anticipation        4901   256
+## 3 Android disgust             4901   207
+## 4 Android fear                4901   268
+## 5 Android joy                 4901   199
+## 6 Android negative            4901   560
+\end{verbatim}
+
+(For example, we see that 321 of the 4901 words in the Android tweets
+were associated with ``anger''). We then want to measure how much more
+likely the Android account is to use an emotionally-charged term
+relative to the iPhone account. Since this is count data, we can use a
+\href{https://stat.ethz.ch/R-manual/R-devel/library/stats/html/poisson.test.html}{Poisson
+test} to measure the difference:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(broom)}
+
+\NormalTok{sentiment_differences <-}\StringTok{ }\NormalTok{by_source_sentiment }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(sentiment) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{do}\NormalTok{(}\KeywordTok{tidy}\NormalTok{(}\KeywordTok{poisson.test}\NormalTok{(.}\OperatorTok{$}\NormalTok{words, .}\OperatorTok{$}\NormalTok{total_words)))}
+
+\NormalTok{sentiment_differences}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 10 x 9
+## # Groups:   sentiment [10]
+##    sentiment estimate statistic  p.value parameter conf.low conf.high method
+##    <chr>        <dbl>     <dbl>    <dbl>     <dbl>    <dbl>     <dbl> <chr> 
+##  1 anger         1.49       321 2.19e- 5      274.    1.24       1.81 Compa~
+##  2 anticipa~     1.17       256 1.19e- 1      240.    0.960      1.43 Compa~
+##  3 disgust       1.68       207 1.78e- 5      170.    1.31       2.16 Compa~
+##  4 fear          1.56       268 1.89e- 5      226.    1.26       1.93 Compa~
+##  5 joy           1.00       199 1.00e+ 0      199.    0.809      1.24 Compa~
+##  6 negative      1.69       560 7.09e-13      459.    1.46       1.97 Compa~
+##  7 positive      1.06       555 3.82e- 1      541.    0.930      1.21 Compa~
+##  8 sadness       1.62       303 1.15e- 6      252.    1.33       1.99 Compa~
+##  9 surprise      1.17       159 2.17e- 1      149.    0.908      1.51 Compa~
+## 10 trust         1.13       369 1.47e- 1      351.    0.960      1.33 Compa~
+## # ... with 1 more variable: alternative <chr>
+\end{verbatim}
+
+And we can visualize it with a 95\% confidence interval:
+
+\includegraphics{Live_Demo_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+Thus, Trump's Android account uses about 40-80\% more words related to
+\textbf{disgust}, \textbf{sadness}, \textbf{fear}, \textbf{anger}, and
+other ``negative'' sentiments than the iPhone account does. (The
+positive emotions weren't different to a statistically significant
+extent).
+
+We're especially interested in which words drove this different in
+sentiment. Let's consider the words with the largest changes within each
+category:
+
+\includegraphics{Live_Demo_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+This confirms that lots of words annotated as negative sentiments (with
+a few exceptions like ``crime'' and ``terrorist'') are more common in
+Trump's Android tweets than the campaign's iPhone tweets.
+
+\hypertarget{conclusion-the-ghost-in-the-political-machine}{%
+\subsubsection{Conclusion: the ghost in the political
+machine}\label{conclusion-the-ghost-in-the-political-machine}}
+
+I was fascinated by the recent
+\href{http://www.newyorker.com/magazine/2016/07/25/donald-trumps-ghostwriter-tells-all}{New
+Yorker article} about Tony Schwartz, Trump's ghostwriter for The Art of
+the Deal. Of particular interest was how Schwartz imitated Trump's voice
+and philosophy:
+
+\begin{quote}
+In his journal, Schwartz describes the process of trying to make Trump's
+voice palatable in the book. It was kind of ``a trick,'' he writes, to
+mimic Trump's blunt, staccato, no-apologies delivery while making him
+seem almost boyishly appealing\ldots. Looking back at the text now,
+Schwartz says, ``I created a character far more winning than Trump
+actually is.''
+\end{quote}
+
+Like any journalism, data journalism is ultimately about human interest,
+and there's one human I'm interested in: who is writing these iPhone
+tweets?
+
+The majority of the tweets from the iPhone are fairly benign
+declarations. But consider cases like these, both posted from an iPhone:
+
+These tweets certainly sound like the Trump we all know. Maybe our above
+analysis isn't complete: maybe Trump has sometimes, however rarely,
+tweeted from an iPhone (perhaps dictating, or just using it when his own
+battery ran out). But what if our hypothesis is right, and these weren't
+authored by the candidate- just someone trying their best to sound like
+him?
+
+Or what about tweets like this (also iPhone), which defend Trump's
+slogan- but doesn't really sound like something he'd write?
+
+A lot has been written about Trump's mental state. But I'd really rather
+get inside the head of this anonymous staffer, whose job is to imitate
+Trump's unique cadence (``Very sad!''), or to put a positive spin on it,
+to millions of followers. Are they a true believer, or just a cog in a
+political machine, mixing whatever mainstream appeal they can into the
+@realDonaldTrump concoction? Like Tony Schwartz, will they one day
+regret their involvement?
+
+\end{document}
