@@ -26,6 +26,12 @@ preamble: >
   \usepackage{amsmath}
 output: rticles::jss_article
 ---
+```{r setup, include = FALSE, cache = FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, cache = TRUE)
+
+library(ggplot2)
+theme_set(theme_bw())
+```
 
 When Trump wishes the Olympic team good luck, he's tweeting from his iPhone. When he's insulting a rival, he's usually tweeting from an Android. Is this an artifact showing which tweets are Trump's own and which are by some handler?
 
